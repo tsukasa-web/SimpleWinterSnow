@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <title>SimpleWinterSnow Sample1</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/SimpleWinterSnow_Sample1.css">
+</head>
+<body>
+<div id="snow-canvas-parent"></div>
+<div class="content">
+    <p>Simple Winter Snow</p>
+</div>
+
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/SimpleWinterSnow.js"></script>
+
+<script>
+    (function() {
+        var targetCanvas_01 = $('#snow-canvas-parent');
+        targetCanvas_01.SimpleWinterSnow({
+            snowNum: 60,
+            snowRadius: 3,
+            snowSpeed: 1,
+            scaleArray: [1.0,0.8,0.6],
+            liquid: true,
+            blurColor: '#FFFFFF',
+            blurRadius: 3,
+            color: '#FFFFFF',
+            fps: 60
+        });
+        WinterSnow = targetCanvas_01.data('SimpleWinterSnow');
+        WinterSnow.init();
+        WinterSnow.drawLoopStart();
+    }).call(this);
+</script>
+</body>
+</html>
